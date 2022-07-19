@@ -7,19 +7,25 @@
 let Fahrenheight = 'imperial';
 let Celsius = 'metric';
 
-let userCity = '';
-
 // DOM cache
 let cityName = document.querySelector('.city-name');
 
 let cityTemp = document.querySelector('.city-temp');
 
 let userCityInput = document.querySelector('#city-name');
+
 let cityInput = document.querySelector('.city-input-form');
+
+let weatherImg = document.querySelector('.weather-img');
+
+
+// initial render on page load
+getData('London', Celsius);
+cityName.innerText = 'London';
 
 cityInput.addEventListener('submit', (e) => {
     e.preventDefault();
-    userCity = userCityInput.value;
+    let userCity = userCityInput.value;
 
     getData(userCity, Celsius);
     cityName.innerText = `${userCity}`;
@@ -31,7 +37,10 @@ async function getData(city, uom) {
     let dataJson = await data.json();
 
     cityTemp.innerText = `${dataJson.main.temp}°C`;
+    weatherImg.src = `http://openweathermap.org/img/wn/${dataJson.weather[0].icon}@2x.png`
 }
+
+
 
 
 
