@@ -12,8 +12,8 @@ body {
 .app-container {
     background-color: #457b9d;
     width: 500px;
-    height: 300px;
-    border-radius: 6px;
+    height: 350px;
+    border-radius: 10px;
     margin: 0 auto;
     margin-top: 5rem;
     padding: 2rem;
@@ -36,6 +36,33 @@ body {
     font-size: 2rem;
     margin-top: 1rem;
     margin-left: .5rem;
+}
+
+.temp-container {
+    position: relative;
+    /* border: 1px solid red; */
+    width: 180px;
+}
+
+.uom-toggle {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 12px;
+    background-color: #EC6E4C;
+    height: 1.8rem;
+    width: 1.2rem;
+    right: 0;
+    bottom: .3rem;
+}
+
+.uom-toggle--btn {
+    margin-top: .25rem;
+    height: .7rem;
+    width: .7rem;
+    background-color: #f1faee;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .city-input-form {
